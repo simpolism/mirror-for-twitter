@@ -1,0 +1,10 @@
+{
+    "name": "Mirror for Twitter",
+    "version": "1.0",
+    "description": "",
+    "content_scripts": [{
+        "matches" : ["http://*.twitter.com/*", "https://*.twitter.com/*"],
+        "js" : ["custom.js"]
+    }],
+    "manifest_version": 2
+}
