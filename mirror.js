@@ -1,19 +1,21 @@
 function addWebcamElement() {
     console.log("add webcam fired");
+    hideWebcamElement();
 
-    // add webcam element above reply box
-    var videoContainer = document.getElementById("ext-video-container");
-    if (videoContainer !== null) {
-        console.log("removing existing webcam container");
-        videoContainer.parentNode.removeChild(videoContainer);
+    // get focused reply box and add video above it
+    var replyUsers = document.getElementsByClassName("is-fakeFocus");
+    var replyParent = replyUsers[0].parentNode;
+    if (replyParent.classList.contains("DMComposer-container")) {
+        // take special action in DMs -- for now just disable
+        return;
     }
 
     videoContainer = document.createElement("div");
     videoContainer.id = "ext-video-container";
+    // don't you DARE @ me about this
     videoContainer.innerHTML = '<video style="width:100%;border-radius:8px;" autoplay="true" id="ext-video"></video>';
 
-    var replyUsers = document.getElementsByClassName("is-fakeFocus");
-    replyUsers[0].parentNode.insertBefore(videoContainer, replyUsers[0].parentNode.childNodes[0]);
+    replyParent.insertBefore(videoContainer, replyParent.childNodes[0]);
 
     // enable webcam
     var videoElem = document.getElementById("ext-video");
@@ -37,9 +39,7 @@ function hideWebcamElement() {
             var vid = videoContainer.children[0];
             var stream = vid.srcObject;
             stream.getTracks()[0].stop();
-            //vid.pause();
             vid.src = "";
-            //stream.stop();
             videoContainer.parentNode.removeChild(videoContainer);
         }
     }
@@ -61,6 +61,7 @@ function addEventListeners() {
 // add at page load
 addEventListeners();
 
+// check every 100ms if URL changed and attach listeners to any new forms
 var prevHash = window.location.pathname;
 window.setInterval(function() {
     if (window.location.pathname != prevHash) {
