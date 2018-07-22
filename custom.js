@@ -8,25 +8,23 @@ function addWebcamElement() {
         videoContainer.parentNode.removeChild(videoContainer);
     }
 
-    var replyUsers = document.getElementsByClassName("is-fakeFocus");
-    console.log(replyUsers);
-
     videoContainer = document.createElement("div");
     videoContainer.id = "ext-video-container";
-    videoContainer.innerHTML = '<video style="width:'+replyUsers[0].offsetWidth+'px;border-radius:8px;" autoplay="true" id="ext-video"></video>';
+    videoContainer.innerHTML = '<video style="width:100%;border-radius:8px;" autoplay="true" id="ext-video"></video>';
 
+    var replyUsers = document.getElementsByClassName("is-fakeFocus");
     replyUsers[0].parentNode.insertBefore(videoContainer, replyUsers[0].parentNode.childNodes[0]);
 
     // enable webcam
     var videoElem = document.getElementById("ext-video");
     if (navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({video: true})
-            .then(function(stream) {
-                videoElem.srcObject = stream;
-            })
-            .catch(function(err0r) {
-                console.log("Something went wrong!");
-            });
+        .then(function(stream) {
+            videoElem.srcObject = stream;
+        })
+        .catch(function(err0r) {
+            console.log("Something went wrong!");
+        });
     }
 }
 
@@ -36,6 +34,12 @@ function hideWebcamElement() {
     if (videoContainer !== null) {
         if (videoContainer.parentElement.getElementsByClassName("condensed")) {
             console.log("removing webcam container");
+            var vid = videoContainer.children[0];
+            var stream = vid.srcObject;
+            stream.getTracks()[0].stop();
+            //vid.pause();
+            vid.src = "";
+            //stream.stop();
             videoContainer.parentNode.removeChild(videoContainer);
         }
     }
