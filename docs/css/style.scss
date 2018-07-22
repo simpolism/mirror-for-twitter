@@ -7,11 +7,16 @@
 
 $baseline-height: 24px;
 
+$bg-color: #fff9f2;
+$txt-color: #1f1f1f;
+$tw-color: #1DA1F2;
+$hl-color: #C1B755;
+
 body {
 	font-family: 'Flaco', sans-serif;
 	font-weight: 400;
-	color:#EDEAE3;
-	background-color: #1f1f1f;
+	color: $txt-color;
+	background-color: $bg-color;
 	padding: 0px;
 	margin: 0px;
 }
@@ -22,7 +27,7 @@ h1{
 }
 
 a {
-	color: white;
+	color: inherit;
 	text-decoration: underline;
 	@include transition (all .15s ease-out);
 	&:hover{
@@ -31,52 +36,82 @@ a {
 }
 
 p{
-
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 17px;
+	color: $txt-color;
 }
 
 #header-container{
 	padding-top: $baseline-height * 2;
 	@include p(); 
-	background-color: #1f1f1f;
+	background-color: $bg-color;
+	width: g(12,12);
+
+	@media (min-width:600px){
+		margin-left: g(1,12);
+	}	
+
+	@media (min-width:1200px){
+		margin-left: g(1,12);
+	}	
+
 }
 
 #title{
-	width: g(2,6);
-	color: #1DA1F2;
+	color: $tw-color;
+	font-weight: 500;
 }
 
 
 #main-content-container{
-
+	display: flex;
+	flex-direction: column;
 	@media (min-width: 800px){
-		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
 	}
+
 }
 
 #abstract{
-	width: g(2,6);
+	@include p();
+	width: g(12,12);
+
+	@media (min-width:600px){
+		margin-left: g(1,12);
+		width: g(10,12);
+	}	
+
+	@media (min-width:1200px){
+		margin-left: g(1,12);
+		width: g(3,12);
+	}	
+}
+
+#spacer-div{
+	width: g(1,12);
 	@include p();
 }
 
 #mirror{
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 20%, 100% 80%, 100% 100%, 20% 100%, 0% 80%, 0% 20%);
+	clip-path: polygon(0 0, 100% 0, 100% 20%, 100% 80%, 100% 100%, 20% 100%, 0% 80%, 0% 20%);
 	padding: $baseline-height / 2;
 	cursor: pointer;
 	text-decoration: none;
-	width: g(4,6);
-	height: 90vh;
-	background-color: #fafafa;
-	color: #1f1f1f;
+	width: g(7,12);
+	height: 724px;
+	background-color: $txt-color;
+	color: $hl-color;
 	font-size: 128px;
 	font-weight: 800;
 	line-height: 120px;
 	letter-spacing: -5px;
+	overflow: hidden;
 	@include transition(all .45s ease-out);
 	&:hover{
-		opacity: 1;
 		transform: translateY(10px);
-		color: blue;
 	}
 	&:active{
 		transform: translateY(15px);
@@ -84,18 +119,23 @@ p{
 	#bord{
 		width: 80%;
 		margin-top: 82px;
-		border-bottom: 1px solid black;
+		border-bottom: 1px solid #hl-color;
 	}
 	#twitdown{
-		width: 200px;
+		width: 250px;
 		height: auto;
-		float:right;
+		margin-top: $baseline-height / 2;
+		margin-left: auto;
+		margin-right: 0px;
+		position: relative;
 		bottom: 0px;
 	}
 	#mirror-text{
-		font-size: 48px;
-		opacity: .5;
-		letter-spacing: -2px;
+		font-size: 44px;
+		margin-left: 20%;
+		color: $bg-color;
+		letter-spacing: 0px;
 		user-select:none;
+
 	}
 }
