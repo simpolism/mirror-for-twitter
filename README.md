@@ -1,7 +1,7 @@
 mirror-for-twitter
 ==================
 
-Use your webcam to keep others in mind while you tweet (Chrome extension).
+Use your webcam to keep others in mind while you tweet ([Chrome extension](https://chrome.google.com/webstore/detail/mirror-for-twitter/mdacnlbfahdecemfimnnmhdmcnohafcl)).
 
 ## Overview
 
