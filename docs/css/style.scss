@@ -58,7 +58,7 @@ p{
 #title{
 	color: $tw-color;
 	font-weight: 500;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 
@@ -120,7 +120,7 @@ p{
 	font-size: 64px;
 	line-height: 60px;
 	@media (min-width:800px){
-		margin: -12px 0px 0px 0px;
+		margin: -48px 0px 0px 0px;
 		width: g(7,12);
 		height: auto;
 		font-size: 96px;
@@ -166,6 +166,7 @@ p{
 	}
 	#mirror-text{
 		-webkit-transform: translate3d(0, 0, 0);
+		text-align:right;
 		font-size: 20px;
 		line-height: 20px;
 		margin-left: 20%;
