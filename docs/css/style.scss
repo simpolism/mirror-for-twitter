@@ -120,7 +120,7 @@ p{
 	font-size: 64px;
 	line-height: 60px;
 	@media (min-width:800px){
-		margin: -48px 0px 0px 0px;
+		margin: -12px 0px 0px 0px;
 		width: g(7,12);
 		height: auto;
 		font-size: 96px;
@@ -169,6 +169,7 @@ p{
 		text-align:right;
 		font-size: 20px;
 		line-height: 20px;
+		margin-right:12px;
 		margin-left: 20%;
 		margin-top: $baseline-height;
 		color: $bg-color;
