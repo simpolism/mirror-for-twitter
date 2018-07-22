@@ -19,6 +19,9 @@ body {
 	background-color: $bg-color;
 	padding: 0px;
 	margin: 0px;
+	::selection{
+			background: rgba(31,31,31, .25);
+	}
 }
 
 h1{
@@ -46,14 +49,11 @@ p{
 	padding-top: $baseline-height * 2;
 	background-color: $bg-color;
 	width: g(12,12);
+	@include p();	
 
-	// @media (min-width:600px){
-	// 	margin-left: g(1,12);
-	// 	width: g(11,12);
-	// }	
-
-	@media (min-width:1200px){
+	@media (min-width:800px){
 		margin-left: g(1,12);
+		padding: 48px 0px 0px 0px;
 		width: g(11,12);
 	}	
 
@@ -70,7 +70,7 @@ p{
 	display: flex;
 	flex-direction: column;
 	
-	@media (min-width: 1200px){
+	@media (min-width: 800px){
 		flex-direction: row;
 		align-items: flex-start;
 	}
@@ -79,28 +79,35 @@ p{
 
 #abstract{
 	width: g(12,12);
-	padding: p();
+	@include p();
 	margin-bottom: $baseline-height;
 
-	@media (min-width:1200px){
+	@media (min-width:800px){
 		margin-left: g(1,12);
 		width: g(3,12);
 		padding: 0px;
 	}	
 }
 
+#abstract-main{
+	font-weight: 700;
+	background-color: rgba(31,31,31, .25);
+}
+
 #spacer-div{
 	width: g(1,12);
 	@include p();
 	display:none;
-	@media (min-width: 1200px){
+	@media (min-width: 800px){
 		display:block;
 	}
 }
 
+
 #mirror{
 	-webkit-clip-path: polygon(0 0, 100% 0, 100% 20%, 100% 80%, 100% 100%, 20% 100%, 0% 80%, 0% 20%);
 	clip-path: polygon(0 0, 100% 0, 100% 20%, 100% 80%, 100% 100%, 20% 100%, 0% 80%, 0% 20%);
+	@include transition(all .45s ease-out);
 	padding: $baseline-height / 2;
 	cursor: pointer;
 	text-decoration: none;
@@ -108,19 +115,26 @@ p{
 	color: $hl-color;
 	font-weight: 800;
 	overflow: hidden;
-	@include transition(all .45s ease-out);
-	margin: 10px;
-	width: g(12,12);
+	margin: 5px;
+	width: g(11,12);
 	height: auto;
 	font-size: 64px;
 	line-height: 60px;
+	@media (min-width:800px){
+		margin: 0px;
+		width: g(7,12);
+		height: auto;
+		font-size: 96px;
+		line-height: 90px;
+		letter-spacing: -3px;	
+	}
 	@media (min-width:1200px){
 		width: g(7,12);
 		height: 724px;
 		font-size: 128px;
 		line-height: 120px;
 		letter-spacing: -5px;	
-	}
+	}	
 
 	&:hover{
 		transform: translateY(10px);
@@ -142,6 +156,9 @@ p{
 		position: relative;
 		bottom: 0px;
 		@media (min-width:1200px){
+			width: 175px;
+		}				
+		@media (min-width:1400px){
 			width: 250px;
 		}		
 		&:hover{
@@ -149,18 +166,45 @@ p{
 		}
 	}
 	#mirror-text{
-		font-size: 44px;
+		font-size: 20px;
+		line-height: 20px;
 		margin-left: 20%;
+		margin-top: $baseline-height;
 		color: $bg-color;
 		letter-spacing: 0px;
 		user-select:none;
-
+		font-weight: 300;
+		@media (min-width: 800px){
+			font-size: 44px;
+			line-height: 40px;
+			margin-top: $baseline-height * 1;
+		}
+		@media (min-width: 1400px){
+			margin-top: $baseline-height * 2;
+		}
 	}
+}
+
+
+#madeby{
+	border-radius: 12px;
+	border: 1px solid white;
+	width: 225px;
+	text-align: center;
+	color:white;
+	font-size: 14px;
+	margin: 24px auto 0px auto;
+	@media(min-width: 800px){
+		margin: 24px 0px 0px 0px;
+	}
+}
+#madeby-1{
+		border-bottom: 1px solid white;
 }
 
 .responsive-br{
 	display:none;
-	@media (min-width:1200px){
+	@media (min-width:800px){
 		display: block;
 	}
 }

@@ -7,8 +7,8 @@
 
 // Function to add consistent padding (gutter) between all columns. In this case 40px
 @mixin p(){
-  padding-left: 20px;
-  padding-right: 20px
+  padding-left: 10px;
+  padding-right: 10px
 }
 
 @mixin transition($args...) {
