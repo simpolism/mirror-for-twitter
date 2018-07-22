@@ -1,0 +1,12 @@
+/* Webfont: Flaco-Lig */@font-face {
+    font-family: 'FlacoLig';
+    src: url('Flaco-Lig.eot'); /* IE9 Compat Modes */
+    src: url('Flaco-Lig.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Flaco-Lig.woff') format('woff'), /* Modern Browsers */
+         url('Flaco-Lig.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Flaco-Lig.svg#Flaco-Lig') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

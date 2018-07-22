@@ -1,0 +1,12 @@
+/* Webfont: Flaco-Thin */@font-face {
+    font-family: 'FlacoThin';
+    src: url('Flaco-Thin.eot'); /* IE9 Compat Modes */
+    src: url('Flaco-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Flaco-Thin.woff') format('woff'), /* Modern Browsers */
+         url('Flaco-Thin.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Flaco-Thin.svg#Flaco-Thin') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

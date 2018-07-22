@@ -1,0 +1,12 @@
+/* Webfont: Flaco-XBol */@font-face {
+    font-family: 'FlacoXBol';
+    src: url('Flaco-XBol.eot'); /* IE9 Compat Modes */
+    src: url('Flaco-XBol.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Flaco-XBol.woff') format('woff'), /* Modern Browsers */
+         url('Flaco-XBol.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Flaco-XBol.svg#Flaco-XBol') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

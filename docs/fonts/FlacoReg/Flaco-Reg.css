@@ -1,0 +1,12 @@
+/* Webfont: Flaco-Reg */@font-face {
+    font-family: 'Flaco';
+    src: url('Flaco-Reg.eot'); /* IE9 Compat Modes */
+    src: url('Flaco-Reg.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Flaco-Reg.woff') format('woff'), /* Modern Browsers */
+         url('Flaco-Reg.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('Flaco-Reg.svg#Flaco-Reg') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
