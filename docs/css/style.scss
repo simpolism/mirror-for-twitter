@@ -7,7 +7,7 @@
 
 $baseline-height: 24px;
 
-$bg-color: #fff9f2;
+$bg-color: #B5B4AA;
 $txt-color: #1f1f1f;
 $tw-color: #1DA1F2;
 $hl-color: #C1B755;
@@ -44,30 +44,33 @@ p{
 
 #header-container{
 	padding-top: $baseline-height * 2;
-	@include p(); 
 	background-color: $bg-color;
 	width: g(12,12);
 
-	@media (min-width:600px){
-		margin-left: g(1,12);
-	}	
+	// @media (min-width:600px){
+	// 	margin-left: g(1,12);
+	// 	width: g(11,12);
+	// }	
 
 	@media (min-width:1200px){
 		margin-left: g(1,12);
+		width: g(11,12);
 	}	
 
 }
 
 #title{
-	color: $tw-color;
+	color: white;
 	font-weight: 500;
+	font-size: 24px;
 }
 
 
 #main-content-container{
 	display: flex;
 	flex-direction: column;
-	@media (min-width: 800px){
+	
+	@media (min-width: 1200px){
 		flex-direction: row;
 		align-items: flex-start;
 	}
@@ -75,23 +78,24 @@ p{
 }
 
 #abstract{
-	@include p();
 	width: g(12,12);
-
-	@media (min-width:600px){
-		margin-left: g(1,12);
-		width: g(10,12);
-	}	
+	padding: p();
+	margin-bottom: $baseline-height;
 
 	@media (min-width:1200px){
 		margin-left: g(1,12);
 		width: g(3,12);
+		padding: 0px;
 	}	
 }
 
 #spacer-div{
 	width: g(1,12);
 	@include p();
+	display:none;
+	@media (min-width: 1200px){
+		display:block;
+	}
 }
 
 #mirror{
@@ -100,16 +104,24 @@ p{
 	padding: $baseline-height / 2;
 	cursor: pointer;
 	text-decoration: none;
-	width: g(7,12);
-	height: 724px;
 	background-color: $txt-color;
 	color: $hl-color;
-	font-size: 128px;
 	font-weight: 800;
-	line-height: 120px;
-	letter-spacing: -5px;
 	overflow: hidden;
 	@include transition(all .45s ease-out);
+	margin: 10px;
+	width: g(12,12);
+	height: auto;
+	font-size: 64px;
+	line-height: 60px;
+	@media (min-width:1200px){
+		width: g(7,12);
+		height: 724px;
+		font-size: 128px;
+		line-height: 120px;
+		letter-spacing: -5px;	
+	}
+
 	&:hover{
 		transform: translateY(10px);
 	}
@@ -122,13 +134,19 @@ p{
 		border-bottom: 1px solid #hl-color;
 	}
 	#twitdown{
-		width: 250px;
+		width: 100px;
 		height: auto;
 		margin-top: $baseline-height / 2;
 		margin-left: auto;
 		margin-right: 0px;
 		position: relative;
 		bottom: 0px;
+		@media (min-width:1200px){
+			width: 250px;
+		}		
+		&:hover{
+			opacity: .75;
+		}
 	}
 	#mirror-text{
 		font-size: 44px;
@@ -137,5 +155,12 @@ p{
 		letter-spacing: 0px;
 		user-select:none;
 
+	}
+}
+
+.responsive-br{
+	display:none;
+	@media (min-width:1200px){
+		display: block;
 	}
 }
