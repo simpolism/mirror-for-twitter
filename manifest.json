@@ -1,6 +1,6 @@
 {
     "name": "Mirror for Twitter",
-    "version": "0.1",
+    "version": "0.1.1",
     "description": "Use your webcam to keep others in mind while you tweet.",
     "content_scripts": [{
         "matches" : ["http://*.twitter.com/*", "https://*.twitter.com/*"],
