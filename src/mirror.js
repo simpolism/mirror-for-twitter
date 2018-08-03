@@ -38,7 +38,9 @@ function hideWebcamElement() {
             console.log("removing webcam container");
             var vid = videoContainer.children[0];
             var stream = vid.srcObject;
-            stream.getTracks()[0].stop();
+            if (stream) {
+                stream.getTracks()[0].stop();
+            }
             vid.src = "";
             videoContainer.parentNode.removeChild(videoContainer);
         }
